@@ -37,7 +37,7 @@ nextBtn.onclick = () => {
   } else {
     questionEl.textContent = "Quiz Completed!";
     optionsEl.innerHTML = "";
-    scoreEl.textContent = Your score: ${score}/${questions.length};
+    scoreEl.textContent = `score:${score}/${questions.length}`;
     nextBtn.style.display = "none";
   }
 };
@@ -50,5 +50,5 @@ document.getElementById("joke-btn").addEventListener("click", getJoke);
 async function getJoke() {
   const response = await fetch("https://official-joke-api.appspot.com/random_joke");
   const data = await response.json();
-  document.getElementById("joke").textContent = ${data.setup} - ${data.punchline};
+  document.getElementById('joke').textContent = `${data.setup} - ${data.punchline}`;
 }
